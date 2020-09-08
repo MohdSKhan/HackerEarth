@@ -1,0 +1,29 @@
+#include<stdbool.h>
+#include<malloc.h>
+//to check if a number is a sum of its proper divisors or not(except number itself)
+char* Solve (int N) {
+   // Write your code here
+   int sum=0;
+   for(int i=1;i<N ;i++)
+   {
+       if(N%i==0)
+       {
+          sum+=i;
+          if(sum==N)
+            return "YES";
+       }
+
+   }
+   return "NO";
+}
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    for(int t_i=0; t_i<T; t_i++) {
+        int N;
+        scanf("%d", &N);
+        char* out_ = Solve(N);
+        printf("%s\n", out_);
+    }
+}
